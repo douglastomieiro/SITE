@@ -1,0 +1,483 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* Margens laterais */
+}
+
+/* Overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(0, 0, 0);
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+    border-radius: 15px;
+    max-width: 90%;
+    width: 400px;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.popup-image {
+    max-width: 200px;
+    height: auto;
+}
+
+.popup-content p {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.popup-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #ffa600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+    background-color: #b67600;
+}
+
+/* Section acima do cabeçalho */
+.top-section {
+    /*background: linear-gradient(135deg, #000000, #ffffff);*/
+    background-color: #aaaaaa;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: -100px;
+    z-index: 999;
+    transition: top 0.3s ease;
+}
+
+.top-section-text {
+    width: 60%;
+}
+
+.top-section-text p {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    margin: 0;
+}
+
+.top-section-image {
+    width: 125px;
+    text-align: right;
+    animation: pulse 2s infinite;
+}
+
+.top-section-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Cabeçalho */
+header {
+    background: #333;
+    color: white;
+    padding: 15px 15%;
+    position: sticky;
+    top: 0;
+    z-index: 998;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.445);
+}
+
+header .logo {
+    height: 60px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #999999;
+}
+
+/* Seções (Desktop) */
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px;
+    min-height: 91vh;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.0s ease, transform 1.0s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section .info {
+    width: 45%;
+}
+
+.section .info h1,
+.section .info h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section .info p {
+    font-size: 18px;
+    color: #666;
+}
+
+.section .gallery {
+    width: 45%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.section .gallery .square {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.section .gallery .square:hover {
+    transform: scale(1.05);
+}
+
+.section .gallery .square img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.section .gallery .square:hover img {
+    transform: scale(1.1);
+}
+
+/* Segunda Section (Invertida no Desktop) */
+.section.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Primeira e Terceira Section */
+#home,
+#services {
+    background: #f4f4f4;
+}
+
+/* Segunda Section */
+#about {
+    background: #e2e2e2;
+}
+
+/* Botão do WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+    transition: background-color 0.3s ease;
+    display: flex;
+}
+
+.whatsapp-button:hover {
+    background: #128c7e;
+}
+
+.whatsapp-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.whatsapp-button2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25d366; /* Cor do WhatsApp */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 20px; /* Espaço acima do botão */
+    transition: background-color 0.3s ease;
+    text-align: center; /* Centraliza o texto */
+    animation: pulse 5s infinite;
+}
+
+.whatsapp-button2:hover {
+    background-color: #128c7e; /* Cor do WhatsApp ao passar o mouse */
+}
+
+.whatsapp-button2 img {
+    margin-left: 10px; /* Espaço entre o texto e o ícone */
+    width: 30px; /* Ajuste o tamanho do ícone */
+    height: 30px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Rodapé */
+footer {
+    background: #333;
+    color: white;
+    padding: 40px 20px;
+    box-shadow: 0 -14px 10px rgba(0, 0, 0, 0.267);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-map {
+    width: 100%;
+}
+
+.footer-map iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+}
+
+.footer-address {
+    width: 35%;
+    text-align: right;
+}
+
+.footer-address h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.footer-address p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+/* Animações ao rolar a página */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries para telas menores (até 768px) */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column; /* Coloca a logo e o menu em coluna */
+        padding: 5px 5%; /* Reduz o padding para melhorar o espaçamento */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    header .logo {
+        margin-bottom: 10px; /* Adiciona espaço entre a logo e o menu */
+    }
+
+    header nav ul {
+        justify-content: center; /* Centraliza o menu horizontalmente */
+        padding: 0; /* Remove o padding padrão da lista */
+    }
+
+    /* Ajustes para mobile */
+    .section {
+        flex-direction: column;
+        padding: 40px 20px;
+        min-height: auto;
+    }
+
+    .section .info {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .section .info h1,
+    .section .info h2 {
+        font-size: 24px;
+    }
+
+    .section .info p {
+        font-size: 14px;
+    }
+
+    .section .gallery {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section.reverse {
+        flex-direction: column;
+    }
+
+    .whatsapp-button {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .whatsapp-button img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-map,
+    .footer-address {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-map iframe {
+        height: 200px;
+    }
+
+    .footer-address h3 {
+        font-size: 20px;
+    }
+
+    .footer-address p {
+        font-size: 14px;
+    }
+}
