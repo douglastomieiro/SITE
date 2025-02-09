@@ -120,20 +120,3 @@ document.addEventListener('DOMContentLoaded', function () {
     checkVisibility();
     window.addEventListener('scroll', checkVisibility);
 });
-
-// Menu de Hambúrguer
-document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('header nav');
-    const menuOverlay = document.querySelector('.menu-overlay');
-
-    menuToggle.addEventListener('click', function () {
-        nav.classList.toggle('active');
-        menuOverlay.classList.toggle('active');
-    });
-
-    menuOverlay.addEventListener('click', function () {
-        nav.classList.remove('active');
-        menuOverlay.classList.remove('active');
-    });
-});

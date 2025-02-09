@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     font-size: 16px;
     background-color: #f9f9f9;
@@ -87,24 +87,21 @@ body {
 /* Section acima do cabeçalho */
 .top-section {
     /*background: linear-gradient(135deg, #000000, #ffffff);*/
-    background-color: #aaaaaa;
+    background-color: #d42f18;
     padding: 5px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: sticky;
     top: -100px;
     z-index: 999;
     transition: top 0.3s ease;
-}
-
-.top-section-text {
-    width: 60%;
+    text-align: center;
 }
 
 .top-section-text p {
     font-size: 18px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     margin: 0;
 }
 
@@ -121,16 +118,16 @@ body {
 
 /* Cabeçalho */
 header {
-    background: #333;
+    background: #d3d3d1;
     color: white;
-    padding: 15px 15%;
+    padding: 10px 15%;
     position: sticky;
     top: 0;
     z-index: 998;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.445);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.445);
 }
 
 header .logo {
@@ -144,14 +141,14 @@ header nav ul {
 }
 
 header nav ul li a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #999999;
+    color: #ffffff;
 }
 
 /* Seções (Desktop) */
@@ -160,10 +157,34 @@ header nav ul li a:hover {
     align-items: center;
     justify-content: space-between;
     padding: 100px;
-    min-height: 91vh;
+    min-height: 100vh;
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1.0s ease, transform 1.0s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    /* Garante que o blur não ultrapasse os limites da section */
+}
+
+/* Aplica o blur na imagem de fundo */
+.section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    /* Herda a imagem de fundo da section */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+    z-index: -2;
+    /* Coloca o blur atrás do conteúdo */
 }
 
 .section.visible {
@@ -173,18 +194,27 @@ header nav ul li a:hover {
 
 .section .info {
     width: 45%;
+    background: #000000c4;
+    text-align: center;
+    padding: 35px;
+    border-radius: 25px;
+}
+
+.section.reverse {
+    flex-direction: row-reverse;
+    /* Inverte a ordem dos elementos */
 }
 
 .section .info h1,
 .section .info h2 {
     font-size: 36px;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
 .section .info p {
-    font-size: 18px;
-    color: #666;
+    font-size: 20px;
+    color: #ffffff;
 }
 
 .section .gallery {
@@ -228,17 +258,6 @@ header nav ul li a:hover {
     flex-direction: row-reverse;
 }
 
-/* Primeira e Terceira Section */
-#home,
-#services {
-    background: #f4f4f4;
-}
-
-/* Segunda Section */
-#about {
-    background: #e2e2e2;
-}
-
 /* Botão do WhatsApp */
 .whatsapp-button {
     position: fixed;
@@ -266,25 +285,31 @@ header nav ul li a:hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #25d366; /* Cor do WhatsApp */
+    background-color: #25d366;
+    /* Cor do WhatsApp */
     color: white;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border-radius: 5px;
     text-decoration: none;
     font-size: 20px;
-    margin-top: 20px; /* Espaço acima do botão */
+    margin-top: 20px;
+    /* Espaço acima do botão */
     transition: background-color 0.3s ease;
-    text-align: center; /* Centraliza o texto */
+    text-align: center;
+    /* Centraliza o texto */
     animation: pulse 5s infinite;
 }
 
 .whatsapp-button2:hover {
-    background-color: #128c7e; /* Cor do WhatsApp ao passar o mouse */
+    background-color: #128c7e;
+    /* Cor do WhatsApp ao passar o mouse */
 }
 
 .whatsapp-button2 img {
-    margin-left: 10px; /* Espaço entre o texto e o ícone */
-    width: 30px; /* Ajuste o tamanho do ícone */
+    margin-left: 10px;
+    /* Espaço entre o texto e o ícone */
+    width: 30px;
+    /* Ajuste o tamanho do ícone */
     height: 30px;
 }
 
@@ -304,10 +329,9 @@ header nav ul li a:hover {
 
 /* Rodapé */
 footer {
-    background: #333;
-    color: white;
+    background: #d3d3d1;
+    color: rgb(0, 0, 0);
     padding: 40px 20px;
-    box-shadow: 0 -14px 10px rgba(0, 0, 0, 0.267);
 }
 
 .footer-content {
@@ -328,6 +352,7 @@ footer {
     height: 300px;
     border: none;
     border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.267);
 }
 
 .footer-address {
@@ -402,18 +427,23 @@ footer {
 @media (max-width: 768px) {
 
     header {
-        flex-direction: column; /* Coloca a logo e o menu em coluna */
-        padding: 5px 5%; /* Reduz o padding para melhorar o espaçamento */
-        text-align: center; /* Centraliza o conteúdo */
+        /*flex-direction: column;*/
+        /* Coloca a logo e o menu em coluna */
+        padding: 5px 5%;
+        /* Reduz o padding para melhorar o espaçamento */
+        text-align: center;
+        /* Centraliza o conteúdo */
     }
 
     header .logo {
-        margin-bottom: 10px; /* Adiciona espaço entre a logo e o menu */
+        margin-bottom: 10px;
+        /* Adiciona espaço entre a logo e o menu */
     }
 
     header nav ul {
-        justify-content: center; /* Centraliza o menu horizontalmente */
-        padding: 0; /* Remove o padding padrão da lista */
+        /* justify-content: center; /* Centraliza o menu horizontalmente */
+        /* padding: 0; /* Remove o padding padrão da lista */
+        display: none;
     }
 
     /* Ajustes para mobile */
