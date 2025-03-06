@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+a {
+    color: rgb(0, 110, 255); /* Define a cor padrão dos links */
+    text-decoration: none; /* Remove o sublinhado (opcional) */
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
