@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +5,8 @@
 }
 
 a {
-    color: rgb(0, 110, 255); /* Define a cor padrão dos links */
-    text-decoration: none; /* Remove o sublinhado (opcional) */
+    color: rgb(0, 110, 255);
+    text-decoration: none;
 }
 
 body {
@@ -171,7 +170,6 @@ header nav ul li a:hover {
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
-    /* Garante que o blur não ultrapasse os limites da section */
 }
 
 /* Aplica o blur na imagem de fundo */
@@ -189,7 +187,6 @@ header nav ul li a:hover {
     background-repeat: no-repeat;
     filter: blur(5px);
     z-index: -2;
-    /* Coloca o blur atrás do conteúdo */
 }
 
 .section.visible {
@@ -369,7 +366,7 @@ footer {
     font-size: 18px;
     cursor: pointer;
     border-radius: 5px;
-    transition: all 0.3s ease; /* Adiciona transição suave */
+    transition: all 0.3s ease;
 }
 
 .facebook-button {
@@ -384,16 +381,15 @@ footer {
     padding: 8px 13px;
 }
 
-/* Efeito hover para o botão do Facebook */
 .facebook-button:hover {
-    background-color: #1466c7; /* Cor mais escura */
-    transform: scale(1.10); /* Aumenta ligeiramente o tamanho */
+    background-color: #1466c7;
+    transform: scale(1.10);
 }
 
 /* Efeito hover para o botão do Instagram */
 .instagram-button:hover {
-    background-color: #c13584; /* Cor mais escura */
-    transform: scale(1.10); /* Aumenta ligeiramente o tamanho */
+    background-color: #c13584;
+    transform: scale(1.10);
 }
 
 .footer-map {
@@ -494,8 +490,6 @@ footer {
     }
 
     header nav ul {
-        /* justify-content: center; /* Centraliza o menu horizontalmente */
-        /* padding: 0; /* Remove o padding padrão da lista */
         display: none;
     }
 
