@@ -5,10 +5,7 @@
 }
 
 ::selection {
-    background-color: #696969cb;
-    /* Cor de fundo da seleção */
-    color: #ffffff;
-    /* Cor do texto selecionado */
+    background-color: #99999999;
 }
 
 a {
