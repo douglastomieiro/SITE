@@ -64,39 +64,65 @@ if (topSection) {
     });
 }
 
-// Modal de imagens ampliadas
 document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
+    const modalVideo = document.getElementById('modalVideo');
     const closeModal = document.getElementById('closeModal');
 
-    if (modal && modalImg && closeModal) {
-        const images = document.querySelectorAll('.gallery .square img');
+    if (modal && modalImg && modalVideo && closeModal) {
+        const items = document.querySelectorAll('.gallery .square img');
 
-        images.forEach(image => {
-            image.addEventListener('click', function () {
+        items.forEach(item => {
+            item.addEventListener('click', function () {
+                const type = item.dataset.type || 'image';
+                const src = item.dataset.src || item.src;
+
+                if (type === 'video') {
+                    modalImg.style.display = 'none';
+                    modalImg.src = '';
+
+                    modalVideo.src = src;
+                    modalVideo.style.display = 'block';
+                    modalVideo.play();
+                } else {
+                    modalVideo.pause();
+                    modalVideo.style.display = 'none';
+                    modalVideo.src = '';
+
+                    modalImg.src = src;
+                    modalImg.alt = this.alt;
+                    modalImg.style.display = 'block';
+                }
+
                 modal.style.display = 'block';
-                modalImg.src = this.src;
-                modalImg.alt = this.alt; // Adiciona o alt da imagem ao modal
             });
         });
 
         closeModal.addEventListener('click', function () {
-            modal.style.display = 'none';
+            closeModalContent();
         });
 
         window.addEventListener('click', function (event) {
             if (event.target === modal) {
-                modal.style.display = 'none';
+                closeModalContent();
             }
         });
 
-        // Fechar modal com a tecla Esc
         document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape' && modal.style.display === 'block') {
-                modal.style.display = 'none';
+                closeModalContent();
             }
         });
+
+        function closeModalContent() {
+            modal.style.display = 'none';
+            modalImg.style.display = 'none';
+            modalImg.src = '';
+            modalVideo.pause();
+            modalVideo.style.display = 'none';
+            modalVideo.src = '';
+        }
     }
 });
 
