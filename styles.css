@@ -114,39 +114,6 @@ body {
     background: rgba(255, 255, 255, 0.3);
 }
 
-/* Section acima do cabeçalho */
-/*
-.top-section {
-    background-color: #e01e04;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: -100px;
-    z-index: 999;
-    transition: top 0.3s ease;
-    text-align: center;
-}
-
-.top-section-text p {
-    font-size: 18px;
-    color: rgb(255, 255, 255);
-    margin: 0;
-}
-
-.top-section-image {
-    width: 40px;
-    text-align: right;
-    animation: pulse 10s infinite;
-    margin-top: 10px;
-}
-
-.top-section-image img {
-    max-width: 100%;
-    height: auto;
-}
-*/
-
 /* Cabeçalho */
 header {
     color: white;
@@ -308,11 +275,6 @@ header nav ul li a:hover {
 
 .section .gallery .square:hover img {
     transform: scale(1.1);
-}
-
-/* Segunda Section (Invertida no Desktop) */
-.section.reverse {
-    flex-direction: row-reverse;
 }
 
 /* Botão do WhatsApp */
@@ -537,19 +499,6 @@ footer {
     font-size: 22px;
     font-weight: bold;
     color: black;
-}
-
-/* Animações ao rolar a página */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 @media (max-width: 1120px) {
