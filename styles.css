@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 ::selection {
@@ -14,19 +15,11 @@ a {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    font-size: 16px;
-    background-color: #d3d3d1;
-    color: #333;
-}
-
-/* Container principal */
-.container {
-    max-width: 1200px;
+    max-width: 1920px;
     margin: 0 auto;
-    padding: 0 20px;
-    /* Margens laterais */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.267);
+    line-height: 1.6;
+    background-color: #ffffff;
 }
 
 /* Overlay */
@@ -104,7 +97,7 @@ body {
 
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.267);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -128,7 +121,7 @@ header {
 
     background: rgba(211, 211, 209, 0.5);
     border-radius: 0px 0px 16px 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.267);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(211, 211, 209, 0.3);
@@ -157,12 +150,11 @@ header nav ul li a:hover {
 
 /* Seções (Desktop) */
 .section {
+    padding: 80px 0 80px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 100px;
-    max-height: 90vh;
-    min-height: 90vh;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.267);
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1.0s ease, transform 1.0s ease;
@@ -179,10 +171,9 @@ header nav ul li a:hover {
     position: absolute;
     top: 0;
     left: 0;
-    width: 105%;
-    height: 105%;
+    width: 100%;
+    height: 100%;
     background-image: inherit;
-    /* Herda a imagem de fundo da section */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -196,12 +187,14 @@ header nav ul li a:hover {
 }
 
 .section .info {
-    width: 35%;
+    width: 550px;
+    min-width: 450px;
     text-align: center;
     padding: 35px;
+    margin: auto;
 
     background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.267);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(0, 0, 0, 0.3);
@@ -234,15 +227,17 @@ header nav ul li a:hover {
 }
 
 .section .gallery {
-    width: 60%;
+    width: 1000px;
+    min-width: 850px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     padding: 10px;
+    margin: auto;
 
     border-radius: 16px;
     background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.267);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(0, 0, 0, 0.3);
@@ -286,8 +281,9 @@ header nav ul li a:hover {
     border-radius: 50%;
     display: flex;
     transition: background-color 0.3s ease;
+    z-index: 999;
 
-    background: rgba(30, 255, 0, 0.2);
+    background: rgba(30, 255, 0, 0.3);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(20px);
@@ -296,7 +292,7 @@ header nav ul li a:hover {
 }
 
 .whatsapp-button:hover {
-    background: rgba(30, 255, 0, 0.3);
+    background: rgba(30, 255, 0, 0.2);
 }
 
 .whatsapp-button img {
@@ -318,7 +314,7 @@ header nav ul li a:hover {
     animation: pulse 2s infinite;
     transition: background-color 0.3s ease;
 
-    background: rgba(30, 255, 0, 0.2);
+    background: rgba(30, 255, 0, 0.3);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(20px);
@@ -327,7 +323,7 @@ header nav ul li a:hover {
 }
 
 .whatsapp-button2:hover {
-    background: rgba(30, 255, 0, 0.3);
+    background: rgba(30, 255, 0, 0.2);
 }
 
 .whatsapp-button2 img {
@@ -352,9 +348,13 @@ header nav ul li a:hover {
 
 /* Rodapé */
 footer {
-    background: #d3d3d1;
-    color: rgb(0, 0, 0);
-    padding: 40px 20px;
+    
+    background: #d7d7d7;
+    background: -webkit-linear-gradient(0deg, #d7d7d7 0%, #eeeeee 100%);
+    background: linear-gradient(0deg, #d7d7d7 0%, #eeeeee 100%);
+
+    color: black;
+    padding: 50px 50px;
 }
 
 .social-buttons a {
@@ -367,9 +367,6 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 .social-buttons {
@@ -429,10 +426,7 @@ footer {
 }
 
 .footer-map iframe {
-    width: 100%;
-    height: 300px;
-    border: none;
-    border-radius: 10px;
+    border-radius: 16px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.267);
 }
 
@@ -503,6 +497,14 @@ footer {
 
 @media (max-width: 1120px) {
 
+    body {
+        min-width: 100%;
+    }
+
+    .modal-content, #modalVideo {
+        max-height: 70%;
+    }
+
     header nav ul {
         display: none;
     }
@@ -517,6 +519,7 @@ footer {
 
     .section .info {
         width: 100%;
+        min-width: 0;
         text-align: center;
         margin-bottom: 20px;
     }
@@ -537,6 +540,7 @@ footer {
 
     .section .gallery {
         width: 100%;
+        min-width: 0;
         grid-template-columns: repeat(2, 1fr);
     }
 
